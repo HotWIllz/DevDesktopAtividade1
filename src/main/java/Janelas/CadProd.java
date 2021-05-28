@@ -5,17 +5,24 @@
  */
 package Janelas;
 
+import Objetos.Produto;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author William
  */
 public class CadProd extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CadProd
-     */
+    Produto prod = new Produto();
+    
     public CadProd() {
         initComponents();
+    }
+    public CadProd(Produto prod) {
+        initComponents();
+        this.prod = prod;
+        
     }
 
     /**
@@ -50,8 +57,18 @@ public class CadProd extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         jButton1.setText("Limpar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Cadastrar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jTDescProd.setText("jTextField1");
 
@@ -153,6 +170,24 @@ public class CadProd extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       prod.setNomeProd(jTNomeProd.getText());
+       prod.setDescProd(jTDescProd.getText());
+       prod.setValorUnit(Double.parseDouble(jTValUnit.getText()));
+       prod.setQtdProd(Integer.parseInt(jTQtdProd.getText()));
+       prod.setFornecedor(jTForn.getText());
+       
+       JOptionPane.showMessageDialog(this, "Produto cadastrado com sucesso!");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       jTNomeProd.setText("");
+       jTDescProd.setText("");
+       jTValUnit.setText("");
+       jTQtdProd.setText("");
+       jTForn.setText("");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

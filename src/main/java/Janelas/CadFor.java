@@ -5,17 +5,23 @@
  */
 package Janelas;
 
+import Objetos.Fornecedor;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author William
  */
 public class CadFor extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CadFor
-     */
+    Fornecedor forn = new Fornecedor();
+    
     public CadFor() {
         initComponents();
+    }
+    public CadFor(Fornecedor forn) {
+        initComponents();
+        this.forn = forn;
     }
 
     /**
@@ -57,6 +63,11 @@ public class CadFor extends javax.swing.JFrame {
         });
 
         jButton2.setText("Cadastrar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jTRazSoc.setText("jTextField1");
 
@@ -160,8 +171,18 @@ public class CadFor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        forn.setRazSoc(jTRazSoc.getText());
+        forn.setCnpj(Double.parseDouble(jTCnpj.getText()));
+        forn.setNomeRep(jTNomeRep.getText());
+        forn.setEndForn(jTEndForn.getText());
+        forn.setFoneForn(Double.parseDouble(jTFone.getText()));
+        
+        JOptionPane.showMessageDialog(this, "Fornecedor Cadastrado com sucesso!");
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

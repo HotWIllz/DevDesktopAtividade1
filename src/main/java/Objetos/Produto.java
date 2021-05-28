@@ -13,6 +13,7 @@ public class Produto {
     private String nomeProd;
     private String descProd;
     private Double valorUnit;
+    private Integer qtdProd;
     private String fornecedor;
 
     /**
@@ -69,6 +70,20 @@ public class Produto {
      */
     public void setFornecedor(String fornecedor) {
         this.fornecedor = fornecedor;
+    }
+
+    /**
+     * @return the qtdProd
+     */
+    public Integer getQtdProd() {
+        return qtdProd;
+    }
+
+    /**
+     * @param qtdProd the qtdProd to set
+     */
+    public void setQtdProd(Integer qtdProd) {
+        this.qtdProd = qtdProd;
     }
     
 }

@@ -85,5 +85,7 @@ public class Fornecedor {
     public void setFoneForn(Double foneForn) {
         this.foneForn = foneForn;
     }
+
+    
     
 }
