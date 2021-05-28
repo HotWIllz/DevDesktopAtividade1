@@ -6,6 +6,9 @@
 
 package Janelas;
 
+import Objetos.Fornecedor;
+import Objetos.Produto;
+
 /**
  *
  * @author William
@@ -14,6 +17,9 @@ public class Exibir extends javax.swing.JFrame {
 
     /** Creates new form Exibir */
     public Exibir() {
+        initComponents();
+    }
+    public Exibir(Fornecedor forn, Produto prod) {
         initComponents();
     }
 
